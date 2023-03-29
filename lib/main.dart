@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
-import 'package:practical_project/pages/Products.dart';
+import 'package:practical_project/tabs/Products.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,12 +34,18 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int index = 0;
+  List<Widget> tabs = [];
+  late Widget page;
+  bool pageAssigned = false;
+
   final bool _pinned = true;
   final bool _snap = false;
   final bool _floating = false;
   var _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
+    tabs.add(const Product());
     return Scaffold(
       drawer: Drawer(
         child: ListView(
@@ -133,14 +139,14 @@ class _HomePageState extends State<HomePage> {
           /// Home
           SalomonBottomBarItem(
             icon: Icon(Icons.home),
-            title: Text("Home"),
+            title: Text("Home Page"),
             selectedColor: Colors.purple,
           ),
 
           /// Likes
           SalomonBottomBarItem(
-            icon: Icon(Icons.favorite_border),
-            title: Text("Likes"),
+            icon: Icon(Icons.production_quantity_limits_rounded),
+            title: Text("Products"),
             selectedColor: Colors.pink,
           ),
 

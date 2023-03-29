@@ -61,12 +61,12 @@ class _ProductState extends State<Product> {
                     children: [
                       Container(
                         width: 270,
-                        height: 100,
+                        height: 50,
                         child: Text(jasonList[index]['title']),
                       ),
                       Container(
                         width: 270,
-                        height: 100,
+                        height: 50,
                         child: Text(jasonList[index]['title']),
                       )
                     ],
